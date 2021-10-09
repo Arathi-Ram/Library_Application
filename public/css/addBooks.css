@@ -1,0 +1,96 @@
+/* Sign Up Page Start Here*/
+.ui{
+  
+  border-radius: 10px;
+  background:lightsteelblue;
+  box-shadow: #8a8f8d17;
+  color:midnightblue !important; ;
+  /* opacity: 0.8; */
+  width: 100%;
+}
+
+/* .signup-body{
+  background-image: url(/images/signUpBGM.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+} */
+
+    /* Sign Up Form Validation start Here */
+  
+    .addBook-form-control{
+      margin-bottom: 23px;
+      padding-bottom: 29px;
+      position: relative;
+      padding: 7px 55px 7px 60px;
+      /* display:flex; */
+      justify-content: space-between;
+    }
+
+    .addBook-form-control label{
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+
+    .addBook-form-control input{
+      display: block;
+      /* margin-right: 5%; */
+      margin:auto;
+      width: 130%;
+      padding: 10px;
+      border-radius: 4px;
+      border:2px solid #d8d1d1;
+    }
+    
+
+    .addBook-form-control small{
+      position: absolute;
+      margin: 3px;
+      visibility: hidden;
+    }
+
+    .valid-icon{
+      position: absolute;
+      top: 43px;
+      right: 18px;
+      visibility: hidden;
+    }
+    .valid-icon-2{
+      position: absolute;
+      top: 43px;
+      right:18px;
+      visibility: hidden;
+    }
+
+    .fa-circle{
+      font-size: 6px;
+    }
+    .fa-check{
+      color: #02b502;
+    }
+   
+   
+    /* Sign Up Form Validation end Here */
+
+    /* Validation error & success class CSS START */
+      .addBook-form-control.error input{
+        border-color: #dd1d07c4;
+        
+      }
+      .addBook-form-control.error i.fa-exclamation-circle{
+        visibility: visible;
+        color:#e74c3c;
+      }
+      .addBook-form-control.error small{
+        visibility: visible;
+        color:#f34936ef;
+      }
+
+      .addBook-form-control.success input{
+        border-color: #2ecc71;
+      }
+
+      .addBook-form-control.success i.fa-check-circle{
+        visibility: visible;
+        color: #2ecc71;
+      }
+    /* Validation error & success class CSS START */

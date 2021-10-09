@@ -1,0 +1,132 @@
+/* Sign Up Page Start Here*/
+.ui{
+  
+    border-radius: 30px;
+    background: rgba(4, 3, 53, 0.733);
+    box-shadow: #8a8f8d17;
+    color: lavenderblush !important; ;
+    opacity: 0.8;
+  }
+  
+  .signup-body{
+    background-image: url(/images/signUpBGM.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+      /* Sign Up Form Validation start Here */
+    
+      .signUp-form-control{
+        margin-bottom: 23px;
+        padding-bottom: 29px;
+        position: relative;
+        padding: 3px 10px 3px 10px;
+        /* display:flex; */
+      }
+  
+      .signUp-form-control label{
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+  
+      .signUp-form-control input{
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+        border:2px solid #d8d1d1;
+      }
+      
+  
+      .signUp-form-control small{
+        position: absolute;
+        margin: 3px;
+        visibility: hidden;
+      }
+  
+      .valid-icon{
+        position: absolute;
+        top: 43px;
+        right: 25px;
+        visibility: hidden;
+      }
+      .valid-icon-2{
+        position: absolute;
+        top: 43px;
+        right:25px;
+        visibility: hidden;
+      }
+  
+      .password-toggle{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 42px;
+        right: 35px;
+        color: black;
+        cursor: pointer;
+        text-align: center;
+        line-height: 20px;
+      }
+      .password-toggle-two{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 42px;
+        right: 35px;
+        color: black;
+        cursor: pointer;
+        text-align: center;
+        line-height: 20px;
+      }
+      
+      .fa-circle{
+        font-size: 6px;
+      }
+      .fa-check{
+        color: #02b502;
+      }
+     
+      .signUp-form .signUp-form-control .password-toggle.active i.fa-eye{
+        display: none;
+      }
+      .signUp-form .signUp-form-control .password-toggle-two.active i.fa-eye{
+        display: none;
+      }
+      .signUp-form .signUp-form-control .password-toggle.active i.fa-eye-slash{
+        display: inline;
+      }
+      .signUp-form .signUp-form-control .password-toggle-two.active i.fa-eye-slash{
+        display: inline;
+      }
+      .signUp-form .signUp-form-control .password-toggle i.fa-eye-slash{
+        display: none;
+      }
+      .signUp-form .signUp-form-control .password-toggle-two i.fa-eye-slash{
+        display: none;
+      }
+      /* Sign Up Form Validation end Here */
+  
+      /* Validation error & success class CSS START */
+        .signUp-form-control.error input{
+          border-color: #dd1d07c4;
+          
+        }
+        .signUp-form-control.error i.fa-exclamation-circle{
+          visibility: visible;
+          color:#e74c3c;
+        }
+        .signUp-form-control.error small{
+          visibility: visible;
+          color:#f34936ef;
+        }
+  
+        .signUp-form-control.success input{
+          border-color: #2ecc71;
+        }
+  
+        .signUp-form-control.success i.fa-check-circle{
+          visibility: visible;
+          color: #2ecc71;
+        }
+      /* Validation error & success class CSS START */
+  

@@ -16,24 +16,27 @@ function checkInputs(){
     const userValue = username.value.trim();
     const passwordValue = password.value.trim();
 
-    if(userValue === "admin"){
-        setSuccessFor(username);
-    } 
-    else if(userValue === ""){
+    // if(userValue === "admin"){
+    //     setSuccessFor(username);
+    // } 
+    if(userValue === ""){
         setErrorFor(username, "Username field cannot be blank!")
     }
     else {
-        setErrorFor(username,"Username is Incorrect!");
+        // setErrorFor(username,"Username is Incorrect!");
+        setSuccessFor(username);
     }
 
-    if(passwordValue === '12345'){
-        setSuccessFor(password);
-    }
-    else if(passwordValue === ""){
+    // if(passwordValue === '12345'){
+    //     setSuccessFor(password);
+    // }
+    // else 
+    if(passwordValue === ""){
         setErrorFor(password, "Password cannot be blank");
     }
     else{
-        setErrorFor(password,"Password is Incorrect!");
+        // setErrorFor(password,"Password is Incorrect!");
+        setSuccessFor(password);
     }
 
     

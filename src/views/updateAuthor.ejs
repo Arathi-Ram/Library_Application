@@ -1,0 +1,229 @@
+<!-- sign up page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Bootply" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2b27a57f1c.js" crossorigin="anonymous"></script>
+    <!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
+    <script async src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/update.css">
+    <!-- <link href="/css/styles.css" rel="stylesheet"> -->
+    <!-- <script async src="/js/addBook.js"></script> -->
+    <title> <%=title%></title>
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
+      
+        h1,h2,h3,.highlight,.navbar a,#masthead h4 {
+        font-family:'Oswald',arial narrow,sans-serif;
+        
+        }
+        body {
+           /* padding-top:50px; */
+            color:#646464;
+          background-color:#efefef;
+        }
+      
+      #masthead {
+        min-height:199px;
+        background-color:#000044;
+        color:#aaaacc;
+      }
+
+      #masthead h1 {
+        font-size: 75px;
+        line-height: 1;
+        color:#fefeff;
+        margin-top:40px;
+      }
+      #topPanel {
+      padding-top:0px;
+      padding-left:22px;
+      padding-right:22px;
+    }
+      #topPanel .panel-body {
+      padding-top:0px;
+      }
+
+      .navbar.affix {
+      position:fixed;
+      top:0;
+      width:100%;
+      }
+
+      .blah:hover{
+        background-color:#000044;
+      }
+
+      #masthead.well {
+        margin-top:31px;
+        background-color:#111166;
+        border-color:#000022;
+        color:#efefff;
+        min-height:127px;
+      }
+    </style>
+</head>
+<body class="">
+    <!-- Navbar Starts Here -->
+    <nav class="navbar navbar-expand-lg navbar-dark" role="banner" style=" background-color: #111166;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/admin">HOME</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <%for(i=0;i<adminNav.length;i++){%>
+        <li class="nav-item blah text-uppercase">
+          <a class="nav-link" aria-current="page" href="<%=adminNav[i].link%>"><%=adminNav[i].name%></a>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- Navbar Ends Here -->
+    <div id="masthead">  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1>Update Author
+              <p class="lead"></p>
+            </h1>
+          </div>
+          <div class="col-md-5">
+            <div class="well well-lg"> 
+              <div class="row">
+                <div class="col-sm-12">
+                  
+          
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div><!-- /cont -->
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="top-spacer"> </div>
+          </div>
+        </div> 
+      </div><!-- /cont -->
+      
+    </div>
+    <!-- Sign Up Form Starts Here -->
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-12"> 
+          
+          <div class="panel">
+            <div class="panel-body">
+    <Section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-auto">
+            <div class=" ui text-white p-3 m-3 text-center">
+              <span >
+                <h1 style="color: rgba(12, 11, 10, 0.452);"class="text-center"><i class="fas fa-pen-alt"> Update Book</i></h1>  
+                </span>
+                <br>
+              <form class="form-group addBook-form" id="addBook-form" action="/admin/<%=authors._id%>" method="POST"  enctype="multipart/form-data">
+                <div class="d-flex justify-content-around">
+                  <div class="form-group col-md-6 addBook-form-control">
+                    <label for="authorName">Author Name</label>
+                    <input type="text" class="form-control" id="authorName" placeholder="Author Name" name="authorName" value="<%=authors.authorName%>">
+                    <!-- The following are the icons used in form-validation -->
+                    <i class="far fa-check-circle valid-icon"></i>
+                    <i class="fas fa-exclamation-circle valid-icon"></i>
+                    <small id="emailHelp" class="form-text"> Field is Empty.</small>
+                    <!--End of Validation icons & text  -->
+                  </div> 
+                  <div class="form-group col-md-6 addBook-form-control">
+                    <label for="nationality">Nationality</label>
+                    <input type="text" class="form-control" id="nationality" placeholder="Nationality" name="nationality" value="<%=authors.nationality%>">
+                    <!-- The following are the icons used in form-validation -->
+                    <i class="far fa-check-circle valid-icon"></i>
+                    <i class="fas fa-exclamation-circle valid-icon"></i>
+                    <small id="emailHelp" class="form-text"> Field is Empty.</small>
+                    <!--End of Validation icons & text  -->
+                  </div>
+                </div>
+                
+                <div class="d-flex justify-content-around">
+                  <div class="form-group col-md-6 addBook-form-control">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" class="form-control" id="dob" placeholder="Date of Birth" name="dob" value="<%=authors.dob%>">
+                    <!-- The following are the icons used in form-validation -->
+                    <i class="far fa-check-circle valid-icon"></i>
+                    <i class="fas fa-exclamation-circle valid-icon"></i>
+                    <small id="emailHelp" class="form-text"> Field is Empty.</small>
+                    <!--End of Validation icons & text  -->
+                  </div> 
+                  <div class="form-group col-md-6 addBook-form-control">
+                    <label for="gender">Gender</label>
+                    <input type="text" class="form-control" id="gender" placeholder="Gender" name="gender" value="<%=authors.gender%>">
+                    
+                    <!-- The following are the icons used in form-validation -->
+                    <i class="far fa-check-circle valid-icon"></i>
+                    <i class="fas fa-exclamation-circle valid-icon"></i>
+                    <small id="emailHelp" class="form-text">Field is Empty.</small>
+                    <!--End of Validation icons & text  -->
+                  </div>
+                </div>
+                
+                
+                
+                
+                  <div class="form-group addBook-form-control">
+                    <label for="works">Famous Works</label>
+                    <input type="text" class="form-control" id="works" placeholder="Famous Works" style="width:110%;" name="works" value="<%=authors.works%>">
+                    <!-- The following are the icons used in form-validation -->
+                    <i class="far fa-check-circle valid-icon"></i>
+                    <i class="fas fa-exclamation-circle valid-icon"></i>
+                    <small id="emailHelp" class="form-text">Field is Empty.</small>
+                    <!--End of Validation icons & text  -->
+  
+                  </div>
+                  
+                
+                
+                <div class="form-group col-auto">
+                  <span class="form-check">
+                    <input type="file"  id="img" name="img" accept="image/,.png,.jpg,.jpeg" style="padding-top: 3%;">
+                    <small>Valid format: jpg/jpeg/png</small>
+                  </span>
+                  
+                </div>
+                <button type="submit" class="btn btn-dark btn-md">Update Author</button>
+              
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-3"></div>
+
+         
+        </div>
+      </div>
+    </Section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Sign Up Form Ends Here -->
+
+    <!-- Footer Starts Here -->
+  <!-- Footer Ends Here -->
+</body>
+</html>

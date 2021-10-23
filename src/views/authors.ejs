@@ -94,15 +94,15 @@
           <div class="row">    
             <br>
             <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/images/<%=authors[i].img%>" style="width:150px;height:140px" class="img-thumbnail"></a>
+              <a class="story-title" href="#"><img alt="" src="uploads/images/<%=authors[i].img%>" style="width:150px;height:140px" class="img-thumbnail"></a>
             </div>
             <div class="col-md-10 col-sm-9">
-              <h3><%=authors[i].name%></h3>
+              <h3><%=authors[i].authorName%></h3>
               <div class="row">
                 <div class="col-xs-9">
                   <h4><span class="label label-default"><%=authors[i].nationality%></span></h4><h4>
                   <small style="font-family:courier,'new courier';" class="text-muted"><%=authors[i].gender%> • 
-                    <a href="/authors/<%=i%>" class="text-muted">Read More</a></small>
+                    <a href="/authors/<%=authors[i]._id%>" class="text-muted">Read More</a></small>
                   </h4></div>
                 <div class="col-xs-3"></div>
               </div>

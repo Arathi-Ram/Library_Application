@@ -73,15 +73,15 @@
     <!-- Navbar Starts Here -->
     <nav class="navbar navbar-expand-lg navbar-dark" role="banner" style=" background-color: #111166;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/home">HOME</a>
+    <a class="navbar-brand" href="/admin">HOME</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <%for(i=0;i<nav.length;i++){%>
+        <%for(i=0;i<adminNav.length;i++){%>
         <li class="nav-item blah text-uppercase">
-          <a class="nav-link" aria-current="page" href="<%=nav[i].link%>"><%=nav[i].name%></a>
+          <a class="nav-link" aria-current="page" href="<%=adminNav[i].link%>"><%=adminNav[i].name%></a>
         </li>
         <%}%>
       </ul>
@@ -137,11 +137,11 @@
                 <h1 style="color: rgba(58, 38, 13, 0.452);"class="text-center"><i class="fas fa-user-plus"> Add Author</i></h1>  
                 </span>
                 <br>
-              <form class="form-group addAuthor-form" id="addAuthor-form" action="" autocomplete="off">
+              <form class="form-group addAuthor-form" id="addAuthor-form" action="/admin/addAuthor/insertAuthor" method="POST" autocomplete="off" enctype="multipart/form-data">
                 <div class="d-flex justify-content-around">
                   <div class="form-group col-md-6 addAuthor-form-control">
                     <label for="authorName">Author Name</label>
-                    <input type="text" class="form-control" id="authorName" placeholder="Author Name">
+                    <input type="text" class="form-control" id="authorName" placeholder="Author Name" name="authorName">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>
@@ -150,7 +150,7 @@
                   </div> 
                   <div class="form-group col-md-6 addAuthor-form-control">
                     <label for="nationality">Nationality</label>
-                    <input type="text" class="form-control" id="nationality" placeholder="Nationality">
+                    <input type="text" class="form-control" id="nationality" placeholder="Nationality" name="nationality">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>
@@ -162,7 +162,7 @@
                 <div class="d-flex justify-content-around">
                   <div class="form-group col-md-6 addAuthor-form-control">
                     <label for="dob">Date of Birth</label>
-                    <input type="text" class="form-control" id="dob" placeholder="Date of Birth">
+                    <input type="text" class="form-control" id="dob" placeholder="Date of Birth" name="dob">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>
@@ -171,7 +171,7 @@
                   </div> 
                   <div class="form-group col-md-6 addAuthor-form-control">
                     <label for="gender">Gender</label>
-                    <input type="text" class="form-control" id="gender" placeholder="Gender">
+                    <input type="text" class="form-control" id="gender" placeholder="Gender" name="gender">
                     
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
@@ -186,7 +186,7 @@
                 
                   <div class="form-group addAuthor-form-control">
                     <label for="works">Famous Works</label>
-                    <input type="text" class="form-control" id="works" placeholder="Famous Works" style="width:110%;">
+                    <input type="text" class="form-control" id="works" placeholder="Famous Works" style="width:110%;" name="works">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>

@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2b27a57f1c.js" crossorigin="anonymous"></script>
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -94,17 +95,17 @@
           <div class="row">    
             <br>
             <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/images/<%=book.img%>" style="width:150px;height:140px" class="img-thumbnail"></a>
+              <a class="story-title" href="#"><img alt="" src="/uploads/images/<%=book.img%>" style="width:150px;height:140px" class="img-thumbnail"></a>
             </div>
             <div class="col-md-10 col-sm-9">
-              <h3><%=book.title%></h3>
+              <h3><%=book.bookTitle%></h3>
               <div class="row">
                 <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=book.author%></span></h4><h4>
+                  <h4><span class="label label-default"><%=book.bookAuthor%></span></h4><h4>
                   <small style="font-family:courier,'new courier';font-weight: bold;" class="text-info"><%=book.genre%></small> <br>
                   <small style="font-family:courier,'new courier';font-weight: bold;" class="text-info">Pages: <%=book.pages%></small> <br>
                   <small style="font-family:courier,'new courier';font-weight: bold;" class="text-info">Language: <%=book.lang%></small> <br>
-                  <small style="font-family:courier,'new courier';font-weight: bold;" class="text-info">Published Date: <%=book.publish%></small><br>
+                  <small style="font-family:courier,'new courier';font-weight: bold;" class="text-info">Published Date: <%=book.publishedDate%></small><br>
                   
                   </h4></div>
                 <div class="col-xs-3"></div>
@@ -116,9 +117,12 @@
           
           <!--/stories-->
           
-          
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
-        
+          <%if(admin!=''){%>
+          <a href="/admin/editBook/<%=book._id%>" class="btn btn-warning pull-left"style="margin-left:10px; padding:9px; color:black;"><i class="fas fa-pen-alt "></i> Update Book </a> 
+          <form action="/admin/deleteBook/<%=book._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger pull-left" style="margin-left: 10px;padding: 9px;color:black;"><i class="fas fa-trash-alt "></i> Delete</button>
+          </form>
+        <%}%>
           
         </div>
       </div>

@@ -7,7 +7,7 @@ const gender = document.getElementById("gender");
 const lang = document.getElementById("lang");
 
 
-addAuthorForm.addEventListener("submit",(e)=>{
+addAuthorForm.addEventListener("keyup",(e)=>{
     e.preventDefault();
 
     checkSignInputs();

@@ -7,7 +7,7 @@ const genre = document.getElementById("genre");
 const lang = document.getElementById("lang");
 
 
-addBookForm.addEventListener("submit",(e)=>{
+addBookForm.addEventListener("keyup",(e)=>{
     e.preventDefault();
 
     checkSignInputs();

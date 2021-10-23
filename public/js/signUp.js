@@ -11,11 +11,11 @@ const Mobile = document.getElementById("inputMob");
 //     e.preventDefault();
 //     checkEmpty();
 // });
-signupForm.addEventListener("submit",(e)=>{
-    e.preventDefault();
+// signupForm.addEventListener("submit",(e)=>{
+//     e.preventDefault();
 
-    checkSignInputs();
-});
+//     checkSignInputs();
+// });
 signupForm.addEventListener("keyup",(e)=>{
     e.preventDefault();
 

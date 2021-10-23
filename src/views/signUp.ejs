@@ -19,7 +19,15 @@
     <!-- Sign Up Form Starts Here -->
     <Section>
       <div class="container">
+        <br>
+        <% if(error!=''){%>
+          <div class="alert alert-danger" role="alert">
+            <%=error%>
+          </div>
+          <%}%>
+          
         <div class="row">
+          
           <div class="col-md-3"></div>
           <div class="col-auto">
             <div class=" ui text-white p-3 m-3 text-center">
@@ -27,11 +35,11 @@
                   <h3>Registration Form <i class="bi bi-pen"></i></h3> 
                 </span>
                 <br>
-              <form class="form-group signUp-form" id="signUp-form" action="" autocomplete="off">
+              <form class="form-group signUp-form" id="signUp-form" action="/signUp/registerUser" method="POST" autocomplete="off">
                 <div class="d-flex justify-content-around">
                   <div class="form-group col-md-6 signUp-form-control">
-                    <label for="fname"><i class="bi bi-person"></i>First Name</label>
-                    <input type="text" class="form-control" id="fname" placeholder="First Name">
+                    <label for="fname"><i class="bi bi-person"></i>Username</label>
+                    <input type="text" class="form-control" id="fname" placeholder="Username" name="username">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>
@@ -39,8 +47,8 @@
                     <!--End of Validation icons & text  -->
                   </div> 
                   <div class="form-group col-md-6 signUp-form-control">
-                    <label for="lname"><i class="bi bi-person"></i>Last Name</label>
-                    <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                    <label for="lname"><i class="bi bi-person"></i>Name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="Name" name="name">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>
@@ -51,7 +59,7 @@
                 
                 <div class="form-group signUp-form-control">
                   <label for="inputEmail"><i class="bi bi-envelope"></i>Email</label>
-                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" autocomplete="off">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email" autocomplete="off" name="email">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>
@@ -63,7 +71,7 @@
                 <div class="d-flex justify-content-around ">
                   <div class="form-group col-md-6 signUp-form-control">
                     <label for="inputpass1"><i class="bi bi-key"></i> Password</label>
-                    <input type="password" class="form-control" id="inputpass1" placeholder="Password" oninput="strengthChecker()">
+                    <input type="password" class="form-control" id="inputpass1" placeholder="Password"name="Pass">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>
@@ -77,7 +85,7 @@
                   </div>
                   <div class="form-group col-md-6 signUp-form-control">
                     <label for="inputPassword4"><i class="bi bi-key"></i> Re-Type Password</label>
-                    <input type="password" class="form-control" id="inputPass2" placeholder="Re-Type Password">
+                    <input type="password" class="form-control" id="inputPass2" placeholder="Re-Type Password" name="RePass">
                     <div class="password-toggle-two">
                       <i class="fas fa-eye"></i>
                       <i class="fas fa-eye-slash"></i>
@@ -92,7 +100,7 @@
                 <div class="d-flex justify-content-around">
                   <div class="form-group col-md-6 signUp-form-control">
                     <label for="inputMob"><i class="bi bi-phone"></i> Mobile Number</label>
-                    <input type="text" class="form-control" id="inputMob" placeholder="Enter Mobile Number">
+                    <input type="text" class="form-control" id="inputMob" placeholder="Enter Mobile Number" name="mob">
                     <!-- The following are the icons used in form-validation -->
                     <i class="far fa-check-circle valid-icon"></i>
                     <i class="fas fa-exclamation-circle valid-icon"></i>
@@ -113,7 +121,7 @@
                 </div>
                 <div class="form-group col-auto">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" name="gender">
                     <label class="form-check-label" for="gridCheck">
                       Remember Me
                     </label>

@@ -13,7 +13,19 @@
 </head>
 <body class="login-body">
     <!-- Login Form Starts Here  -->
-    <section class= "logform"></section>
+    <section class= "logform">
+      <% if(error!=''){%>
+        <div class="alert alert-danger" role="alert">
+          <%=error%>
+        </div>
+        <%}%>
+
+        <%if(success!=''){%>
+        <div class="alert alert-success" role="alert">
+          <%=success%>
+        </div>
+        <%}%>
+    </section>
      <div class="form card mt-5 bg-dark col-lg-4">
       <span >
         <h3 style="color: bisque;"class="text-center"><i class="bi bi-box-arrow-in-right"></i> Login </i></h3> 
